@@ -4,7 +4,7 @@ import './nav.scss'
 const Navbar = () => {
     return (
         <div className={'check'}>
-            <h1>heeelo</h1>
+            <h1>Moisture content</h1>
         </div>
     );
 };
