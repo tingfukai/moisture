@@ -3,7 +3,7 @@ import "./style.scss"
 import { Container } from 'react-bootstrap';
 const Measurements = ({ handleMaterialWetM }) => {
 
-    const [tareId, setTareId] = useState(null);
+    const [tareId, setTareId] = useState("MT001");
     const [tareMass, setTareMass] = useState("");
     const [tareMWM, setTareMWM] = useState("");
 

@@ -3,7 +3,7 @@ import "./style.scss"
 import { Container } from 'react-bootstrap';
 
 const DryMass = ({ tareMass, handleMaterialDryM }) => {
-    const [tareId, setTareId] = useState(null);
+    const [dryMB, setDryMB] = useState("01BAL");
     const [tareMDM, setTareMDM] = useState("");
 
 
@@ -18,12 +18,12 @@ const DryMass = ({ tareMass, handleMaterialDryM }) => {
                 <div className="  col">
                     <div className="  d-flex flex-wrap justify-content-between">
                         <div className="col-lg-5 col-12 Input">
-                            <label>Tare ID: </label>
+                            <label>Dry Mass Balance: </label>
                             <input
 
-                                placeholder='MT001'
+                                placeholder='01BAL'
                                 required
-                                onChange={(e) => setTareId(e.target.value)}
+                                onChange={(e) => setDryMB(e.target.value)}
                             />
 
                         </div>
