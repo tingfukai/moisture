@@ -1,14 +1,32 @@
+import React, { Fragment } from 'react';
 import logo from './logo.svg';
 import Navbar from './components/navbar/navbar';
-import Preparation from './components/preparetion/method';
-function App() {
+import Results from './components/body/result';
+import Measurements from './components/body/measurement';
+import DryMass from './components/body/dry_mas';
+import Preparation from './components/body/preparation';
+import "./app.scss"
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-        <Preparation />
-      </header>
-    </div>
+    <Fragment>
+      <Navbar />
+
+      <div className='section' >
+        <div className="body container">
+          <Preparation />
+          <Measurements />
+          <DryMass />
+          <Results />
+        </div>
+
+      </div>
+
+
+
+    </Fragment>
+
+
+
   );
 }
 
