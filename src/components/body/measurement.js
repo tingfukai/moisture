@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "./style.scss"
 import { Container } from 'react-bootstrap';
-const Measurements = ({ handleMaterialWestM }) => {
+const Measurements = ({ handleMaterialWetM }) => {
 
     const [tareId, setTareId] = useState(null);
-    const [tareMass, setTareMass] = useState(null);
-    const [tareMWM, setTareMWM] = useState(null);
+    const [tareMass, setTareMass] = useState("");
+    const [tareMWM, setTareMWM] = useState("");
 
 
 
     const handleResult = () => {
-        const cal = tareMWM - tareMass
-        handleMaterialWestM(cal)
+        const cal = ((tareMWM - tareMass)).toFixed(1)
+        handleMaterialWetM(cal, tareMass, tareMWM)
         return (
             cal
         )
@@ -64,7 +64,7 @@ const Measurements = ({ handleMaterialWestM }) => {
                         <div className="col-lg-5 col-12 Input">
                             <label>Material Wet Mass (g): </label>
                             <div>
-                                {tareMass != null && tareMWM != null ? <span>{handleResult()}</span> : null}
+                                {tareMass != "" && tareMWM != "" ? <span>{handleResult()}</span> : null}
                             </div>
 
 

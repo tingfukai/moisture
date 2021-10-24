@@ -8,22 +8,50 @@ import Preparation from './components/body/preparation';
 import "./app.scss"
 const App = () => {
 
-  const [resultM, setResultM] = useState(null);
+  const [resultWM, setResultWM] = useState(null);
+  const [resultDM, setResultDM] = useState(null);
+  const [fResult, setFResult] = useState(null);
+  const [Mc, setMc] = useState(null);
+  const [Mcms, setMcms] = useState(null);
+  const [Mcds, setMcds] = useState(null);
 
-  const handleMaterialWestM = (v) => {
-
-    setResultM(v);
+  //Wet
+  const handleMaterialWetM = (v, tareM, tareMWM) => {
+    setMc(tareM);
+    setMcms(tareMWM);
+    setResultWM(v);
   }
+
+  //Dry
+  const handleMaterialDryM = (v) => {
+    const result = ((v - Mc)).toFixed(1)
+    setResultDM(result)
+    setMcds(v)
+    return (
+      result
+    )
+  }
+
+  const handleResult = () => {
+    const result = Math.round(((Mcms - Mcds) / resultDM) * 100);
+    console.log(((Mcms - Mcds) / resultDM))
+    setFResult(result)
+    return (
+      result
+    )
+  }
+
+
   return (
     <Fragment>
       <Navbar />
 
       <div className='section' >
         <div className="body container">
-          <Preparation />
-          <Measurements handleMaterialWestM={handleMaterialWestM} />
-          <DryMass />
-          <Results />
+          {/*  <Preparation /> */}
+          <Measurements handleMaterialWetM={handleMaterialWetM} />
+          <DryMass Mc={Mc} handleMaterialDryM={handleMaterialDryM} />
+          <Results handleResult={handleResult} />
         </div>
 
       </div>
