@@ -34,7 +34,6 @@ const App = () => {
 
   const handleResult = () => {
     const result = Math.round(((Mcms - Mcds) / resultDM) * 100);
-    console.log(((Mcms - Mcds) / resultDM))
     setFResult(result)
     return (
       result
